@@ -1,5 +1,7 @@
 const columns = document.querySelectorAll('.column_cards');
-const cards = document.querySelectorAll('.card');
+// esse card foi selecionado porque estava sendo criado 
+// que vinha do html
+// const cards = document.querySelectorAll('.card');
 
 let draggedCard;
 
@@ -33,7 +35,7 @@ const drop = ({ target }) => {
 
 const creatCard = ({ target }) => {
     if(!target.classList.contains("column_cards")) return; 
-     
+
     const card = document.createElement("section"); 
     card.className = "card";
     card.draggable = true;
@@ -72,6 +74,8 @@ columns.forEach((column) => {
 })
 
 //Chamada da function dragStart em cada card
-cards.forEach((card) => {
-    card.addEventListener("dragstart", dragStart);
-})
+// Ele era chamado aqui, mas como os cards agora são criados dinamicamente
+// a partir do double click, essa chamada foi movida para a function creatCard
+// cards.forEach((card) => {
+//     card.addEventListener("dragstart", dragStart);
+// })""
